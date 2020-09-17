@@ -11,6 +11,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import javax.persistence.EntityNotFoundException;
+
 import static org.junit.Assert.*;
 
 //use the database
@@ -45,6 +47,7 @@ public class UserServiceImplTest
     @Test
     public void findByNameContaining()
     {
+        assertEquals(2, userService.findByNameContaining("tt").size());
     }
 
     @Test
